@@ -1,8 +1,8 @@
 import * as React from "react"
 import { chakra } from "@chakra-ui/system"
 
-export * from "./hover.stories"
-export * from "./popover.stories"
+export * from "./hover"
+export * from "./popover"
 
 export default {
   title: "Components / Overlay / Popover",

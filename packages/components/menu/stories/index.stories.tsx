@@ -1,7 +1,7 @@
 import { chakra } from "@chakra-ui/system"
 import * as React from "react"
 
-export * from "./menu.stories"
+export * from "./menu"
 
 export default {
   title: "Components / Overlay / Menu",

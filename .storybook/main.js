@@ -6,25 +6,28 @@ function getStories({ pkg, dir = "components" }) {
   const dirName = `packages/${dir}`
   const scope = pkg ? [pkg] : fs.readdirSync(dirName)
   return scope
-    .map((package) => `${dirName}/${package}/stories`)
+    .map((pkg) => `${dirName}/${pkg}/stories`)
     .filter((storyDir) => fs.existsSync(storyDir))
     .map((storyDir) => `../${storyDir}/*.stories.tsx`)
 }
-
 module.exports = {
   core: {
-    builder: "@storybook/builder-webpack5",
     disableTelemetry: true,
   },
   stories: [
-    ...getStories({ dir: "core" }),
-    ...getStories({ dir: "components" }),
+    ...getStories({
+      dir: "core",
+    }),
+    ...getStories({
+      dir: "components",
+    }),
   ],
   addons: [
     "@storybook/addon-a11y",
     "@storybook/addon-essentials",
     "@storybook/addon-storysource",
     "@chakra-ui/storybook-addon",
+    "@storybook/addon-mdx-gfm",
   ],
   webpackFinal: async (config) => {
     config.resolve.alias = {
@@ -43,5 +46,16 @@ module.exports = {
   },
   typescript: {
     reactDocgen: false,
+  },
+  docs: {
+    autodocs: true,
+  },
+  framework: {
+    name: "@fy-dev/react-rspack",
+    // name: "@storybook/react-webpack5",
+    options: {},
+  },
+  features: {
+    babelModeV7: true,
   },
 }

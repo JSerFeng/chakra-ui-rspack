@@ -1,9 +1,9 @@
 import { PortalManager } from "@chakra-ui/portal"
 import * as React from "react"
 
-export * from "./modal.stories"
-export * from "./drawer.stories"
-export * from "./focus-ref.stories"
+export * from "./modal"
+export * from "./drawer"
+export * from "./focus-ref"
 
 export default {
   title: "Components / Overlay / Modal",

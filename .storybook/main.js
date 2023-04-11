@@ -51,7 +51,7 @@ module.exports = {
     autodocs: true,
   },
   framework: {
-    name: "@fy-dev/react-rspack",
+    name: "storybook-storybook-react-rspack",
     // name: "@storybook/react-webpack5",
     options: {},
   },

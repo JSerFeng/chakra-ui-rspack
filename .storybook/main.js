@@ -51,9 +51,11 @@ module.exports = {
     autodocs: true,
   },
   framework: {
-    name: "storybook-storybook-react-rspack",
-    // name: "@storybook/react-webpack5",
-    options: {},
+    name: "storybook-react-rspack",
+    // name: '@storybook/react-webpack5',
+    options: {
+      fastRefresh: true,
+    },
   },
   features: {
     babelModeV7: true,

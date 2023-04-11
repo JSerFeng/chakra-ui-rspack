@@ -14,5 +14,11 @@ module.exports = ({ config }) => {
       "../packages/components/theme/src",
     ),
   }
+  config.module.rules.push({
+    test: /\.mjs$/,
+    resolve: {
+      fullySpecified: false,
+    },
+  })
   return config
 }
